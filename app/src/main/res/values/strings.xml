@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TreeTable</string>
+    <string name="tables">Таблицы</string>
+    <string name="add_table_button">Add table button</string>
+    <string name="table_name_placeholder">Название таблицы</string>
+    <string name="create_table">Создать таблицу</string>
+    <string name="trees">Деревья</string>
+    <string name="tree_number">Номер дерева</string>
+</resources>
