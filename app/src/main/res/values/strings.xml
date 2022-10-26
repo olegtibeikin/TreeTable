@@ -6,4 +6,5 @@
     <string name="create_table">Создать таблицу</string>
     <string name="trees">Деревья</string>
     <string name="tree_number">Номер дерева</string>
+    <string name="save">Сохранить</string>
 </resources>

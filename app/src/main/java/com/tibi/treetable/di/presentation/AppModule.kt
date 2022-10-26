@@ -37,7 +37,9 @@ val treeModule = module {
     viewModel { parameters ->
         TreeViewModel(
             projectId = parameters.get(),
-            treeId = parameters.get()
+            treeId = parameters.get(),
+            addTreeUseCase = get(),
+            getSortedTreeTypeListUseCase = get()
         )
     }
 }

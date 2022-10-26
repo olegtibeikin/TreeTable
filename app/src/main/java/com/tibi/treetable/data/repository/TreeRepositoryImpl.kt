@@ -4,6 +4,7 @@ import com.tibi.treetable.data.database.TreeTableDao
 import com.tibi.treetable.data.database.model.toDatabaseModel
 import com.tibi.treetable.data.database.model.toDomainModel
 import com.tibi.treetable.domain.table.model.Tree
+import com.tibi.treetable.domain.table.model.TreeType
 import com.tibi.treetable.domain.table.repository.TreeRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -25,5 +26,8 @@ class TreeRepositoryImpl(
 
     override fun getTreeList(projectId: Int): Flow<List<Tree>> =
         treeTableDao.getTreeList(projectId).map { list -> list.map { it.toDomainModel() } }
+
+    override fun getSortedTreeTypeList(projectId: Int): Flow<List<TreeType>> =
+        treeTableDao.getSortedTreeTypeList(projectId)
 
 }

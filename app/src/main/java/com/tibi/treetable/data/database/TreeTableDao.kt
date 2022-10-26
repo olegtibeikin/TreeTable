@@ -3,6 +3,7 @@ package com.tibi.treetable.data.database
 import androidx.room.*
 import com.tibi.treetable.data.database.model.ProjectEntity
 import com.tibi.treetable.data.database.model.TreeEntity
+import com.tibi.treetable.domain.table.model.TreeType
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -23,6 +24,9 @@ interface TreeTableDao {
     //Tree
     @Query("SELECT * FROM trees_tbl WHERE projectId = :projectId")
     fun getTreeList(projectId: Int): Flow<List<TreeEntity>>
+
+    @Query("SELECT type FROM trees_tbl WHERE projectId = :projectId GROUP BY type ORDER BY COUNT(*)")
+    fun getSortedTreeTypeList(projectId: Int): Flow<List<TreeType>>
 
     @Query("SELECT * FROM trees_tbl WHERE id = :id")
     suspend fun getTree(id: Int): TreeEntity

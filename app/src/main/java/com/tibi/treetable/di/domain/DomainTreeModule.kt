@@ -19,4 +19,7 @@ val domainTreeModule = module {
     factory {
         GetTreeListUseCase(treeRepository = get())
     }
+    factory {
+        GetSortedTreeTypeListUseCase(treeRepository = get())
+    }
 }

@@ -2,6 +2,7 @@ package com.tibi.treetable.ui.common
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -10,6 +11,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -41,9 +43,9 @@ fun TextChip(
             }
         ),
         onClick = onClick,
-        modifier = modifier
+        modifier = modifier.height(40.dp)
     ) {
-        Row(modifier = Modifier) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = text,
                 style = MaterialTheme.typography.button,
